@@ -1,0 +1,71 @@
+{config_load file="$language/lang_$language.conf" section="account"}
+
+
+	<h2>{#heading_account#}{$error_message}</h2>
+
+	{if $products_history}
+	  <h3>{#title_viewed_products#}</h3>
+
+		{foreach name=history_products item=products_history from=$products_history}
+
+		  {if $products_history.PRODUCTS_IMAGE!=''}
+		   <div class="subcolumns">
+  				<div class="c25l">
+    				<div class="subcl">
+      					<img src="{$products_history.PRODUCTS_IMAGE}" class="imgLeft" alt="{$products_history.PRODUCTS_NAME}" />
+				    </div>
+  				</div>
+  				<div class="c75r">
+    				<div class="subcr">
+    					<a href="{$products_history.PRODUCTS_LINK}">{$products_history.PRODUCTS_NAME}</a> (<a href="{$products_history.PRODUCTS_CATEGORY_URL}">{#text_goto_cat#}</a>)<br />
+						{$products_history.PRODUCTS_PRICE}<br />
+						{if $products_history.PRODUCTS_VPE}{$products_history.PRODUCTS_VPE}<br />{/if}
+						{$products_history.PRODUCTS_TAX_INFO}{$products_history.PRODUCTS_SHIPPING_LINK}<br/>
+						{$products_history.BUY_NOW_BUTTON}
+     				</div>
+  				</div>
+			</div>
+			{else}
+			<p>
+			    <a href="{$products_history.PRODUCTS_LINK}">{$products_history.PRODUCTS_NAME}</a> (<a href="{$products_history.PRODUCTS_CATEGORY_URL}">{#text_goto_cat#}</a>)<br />
+				{$products_history.PRODUCTS_PRICE}<br />
+				{if $products_history.PRODUCTS_VPE}{$products_history.PRODUCTS_VPE}<br />{/if}
+				{$products_history.PRODUCTS_TAX_INFO}{$products_history.PRODUCTS_SHIPPING_LINK}<br/>
+				{$products_history.BUY_NOW_BUTTON}
+			</p>
+			{/if}
+				<br class="clearHere" />
+
+		{/foreach}
+	{else}
+ 	<h3>{#title_welcome#}</h3>
+		<p>{#text_welcome#}</p>
+	{/if}
+
+	{if $LINK_LOGIN}
+	  <p><a href="{$LINK_LOGIN}">{#text_login#}</a></p>
+	{/if}
+		<hr class="dis" />
+	<h3>{#title_account#}</h3>
+		<ul>
+			<li><a href="{$LINK_EDIT}">{#text_edit#}</a> <span class="dontShow">.</span></li>
+			<li><a href="{$LINK_ADDRESS}">{#text_address#}</a> <span class="dontShow">.</span></li>
+			<li><a href="{$LINK_PASSWORD}">{#text_password#}</a> <span class="dontShow">.</span></li>
+		</ul>
+
+
+	{if $order_content}
+	<h3>{#title_orders#} ( <a href="{$LINK_ALL}">{#text_all#}</a> )</h3>
+
+		{foreach name=aussen item=order_data from=$order_content}
+		<p class="trennlinie">
+			<a href="{$order_data.ORDER_LINK}">{$order_data.ORDER_DATE} {#order_nr#}{$order_data.ORDER_ID}</a><br />
+			{#order_total#}{$order_data.ORDER_TOTAL}<br />
+			{#order_status#}{$order_data.ORDER_STATUS}<br />
+			{$order_data.ORDER_BUTTON}
+		</p>
+		{/foreach}
+
+	{/if}
+	<h3>{#title_notification#}</h3>
+		<p><a href="{$LINK_NEWSLETTER}">{#text_newsletter#}</a></p>

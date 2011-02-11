@@ -1,0 +1,3 @@
+product_url	name	description	image_url	category	price	brand
+http://xtmogg.local/shop/product_info.php?info=p2_Samsung-LCD.html	Samsung LCD		http://xtmogg.local/shop/images/product_images/original_images/2_0.jpg	Fernseher 	10.00	
+http://xtmogg.local/shop/product_info.php?info=p1_test.html	test		http://xtmogg.local/shop/images/product_images/original_images/1_0.jpg	test 	45.00	

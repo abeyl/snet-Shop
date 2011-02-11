@@ -1,0 +1,16 @@
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+**
+**  YAML Version: 2.5
+**  Dateiversion: 18.06.06
+**  Datei       : layout_3col_fixed.css
+**  Funktion    : Zentrales Stylesheet 3-Spalten-Layout mit fester Breite und grafikfreien Spaltentrennern
+**
+*/
+@import url(css/main/base.css);
+@import url(css/modifications/basemod.css);
+@import url(css/modifications/basemod_3col_fixed.css);
+@import url(css/navigation/nav_shinybuttons.css);
+@import url(css/main/content.css);
+@import url(css/print/print_003.css);

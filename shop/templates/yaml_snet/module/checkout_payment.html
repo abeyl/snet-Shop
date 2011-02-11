@@ -1,0 +1,51 @@
+{config_load file="$language/lang_$language.conf" section="checkout_payment"}
+<div class="floatbox">
+	  <div class="processCheckoutGreen">{#text_shipping_info#}<br /><img src="{$tpl_path}img/icons/check.gif" height="16" width="16" alt="" /></div>
+	  <div class="processCheckoutYellow"><strong>{#text_payment_info#}</strong><br /><img src="{$tpl_path}img/icons/now.gif" height="16" width="16" alt="" /></div>
+	  <div class="processCheckoutRed">{#text_confirm#}<br /><img src="{$tpl_path}img/icons/cross.gif" height="16" width="16" alt="" /></div>
+	  <div class="processCheckoutRed">{#text_finished#}<br /><img src="{$tpl_path}img/icons/cross.gif" height="16" width="16" alt="" /></div>
+</div>
+<h4>{#heading_payment#}</h4>
+	<div class="cart">
+
+<h3>{#title_address#}:</h3>
+	{$FORM_ACTION}
+	{if $error!=''}<div class="error">{$error}</div>
+	{/if}
+
+	<p>{#text_address#}</p>
+	<h3>{#title_address#}</h3>
+	<p class="container">{$ADDRESS_LABEL}<br />{$BUTTON_ADDRESS}</p>
+
+	<hr class="dis" />
+
+<h3>{#title_payment#}</h3>
+	<p>{#text_payment#}</p>
+
+	{if $GV_COVER!='true'}
+	  {$PAYMENT_BLOCK}{$module_gift}
+	{else}
+	  <p>{#text_gccover#}</p>
+	{/if}
+
+	<h3 class="clearHere">{#title_comments#}:</h3>
+	<div class="longTextarea">
+	{$COMMENTS}
+	</div>
+
+	<h3 class="clearHere">{#title_agb#}</h3>
+	<p>{$AGB_LINK}</p>
+	<div class="longTextarea">
+		{$AGB}<br class="clearHere" />
+	  {$AGB_checkbox} <label class="longLabel">{#text_accept_agb#}</label>
+	</div>
+
+	<h3 class="clearHere">{#title_continue#}:</h3>
+
+	<div class="floatbox">
+			<div class="leftCol">{#text_continue#}</div>
+			<div class="rightCol">{$BUTTON_CONTINUE}</div>
+	</div><br class="clearHere" /><br class="clearHere" />
+
+	{$FORM_END}
+</div>

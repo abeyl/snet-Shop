@@ -1,0 +1,83 @@
+{config_load file="$language/lang_$language.conf" section="index"}
+<div id="page_margins">
+<div id="page" class="hold_floats">
+
+<div id="header">
+	<img src="{$tpl_path}img/yaml-title-xtc.gif" alt="{$store_name}"/>
+</div>
+
+<!-- #nav: Hauptnavigation -->
+<div id="nav">
+	<a id="navigation" name="navigation"></a> <!-- Skiplink-Anker: Navigation -->
+	{php}
+		// Current Link Hack - by Reinhard Hiebl
+		$cur_link = explode('/', $_SERVER['PHP_SELF']);
+		$cur_link = array_pop($cur_link);
+		if (strpos($cur_link, '?') === true ) {
+			$pos = strpos($cur_link, '?', 1);
+			if ($pos) {
+				$cur_link = substr($cur_link, 0, $pos);
+			}
+		}
+	{/php}
+	<div id="nav_main">
+		<ul>
+			<li{php} echo $current = $cur_link=='index.php' ? ' id="current"' : ''; {/php}><a href="{php}echo xtc_href_link('index.php');{/php}"><span>Home</span></a></li>
+		{if $account}
+		{php} if (isset($_SESSION['customer_id'])) { {/php}
+			<li{php} echo $current = $cur_link=='logoff.php' ? ' id="current"' : ''; {/php}><a href="{$logoff}"><span>{#link_logoff#}</span></a></li>
+		{php} } {/php}
+		{/if}
+		{if $account}
+			<li{php} echo $current = $cur_link=='account.php' ? ' id="current"' : ''; {/php}><a href="{$account}"><span>{#link_account#}</span></a></li>
+		{/if}
+			<li{php} echo $current = $cur_link=='shopping_cart.php' ? ' id="current"' : ''; {/php}><a href="{$cart}"><span>{#link_cart#}</span></a></li>
+			<li{php} echo $current = $cur_link=='checkout_shipping.php' ? ' id="current"' : ''; {/php}><a href="{$checkout}"><span>{#link_checkout#}</span></a></li>
+		</ul>
+</div></div>
+<!-- #nav: - Ende -->
+
+<!-- #main: Beginn Inhaltsbereich -->
+<div id="main">
+<div id="teaser" class="clearfix">
+{$navtrail}
+</div>
+<a id="content" name="content"></a> <!-- Skiplink-Anker: Content -->
+
+<!-- #col1: Erste Float-Spalte des Inhaltsbereiches -->
+    <div id="col1">
+      <div id="col1_content" class="clearfix">
+{$box_CATEGORIES}{$box_ADD_QUICKIE}{$box_CONTENT}{$box_INFORMATION}{$box_LAST_VIEWED}{$box_REVIEWS}{$box_SEARCH}{$box_SPECIALS}
+		</div>
+    </div>
+<!-- #col1: - Ende -->
+
+<!-- #col2: zweite Flaot-Spalte des Inhaltsbereiches -->
+    <div id="col2">
+      <div id="col2_content" class="clearfix">
+{$box_CART}{$box_LOGIN}{$box_ADMIN}{$box_NEWSLETTER}{$box_BESTSELLERS} {$box_WHATSNEW} {$box_INFOBOX} {$box_CURRENCIES} {$box_LANGUAGES}{$box_MANUFACTURERS_INFO}{$box_MANUFACTURERS}
+      </div>
+    </div>
+<!-- #col2: - Ende -->
+
+<!-- #col3: Statische Spalte des Inhaltsbereiches -->
+    <div id="col3">
+      <div id="col3_content" class="clearfix" >
+      	<div id="col3_innen" class="floatbox">
+      		{$main_content}
+      	</div>
+      </div>
+      <!-- IE Column Clearing -->
+	  <div id="ie_clearing">&nbsp;</div>
+      <!-- Ende: IE Column Clearing -->
+    </div>
+<!-- #col3: - Ende -->
+
+</div>
+<!-- #main: - Ende -->
+
+<!-- #footer: Beginn Fusszeile -->
+<div id="footer"> </div>
+<!-- #footer: Ende -->
+</div>
+</div>

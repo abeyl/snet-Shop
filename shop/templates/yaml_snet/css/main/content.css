@@ -1,0 +1,919 @@
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+**
+**  YAML Version: 2.5
+**  Dateiversion: 04.07.06
+**  Datei       : content.css
+**  Funktion    : Formatierung der Inhalte (Texte, Grafiken, Links, Listen, Tabellen usw.)
+**
+*/
+
+@media all
+{
+/* ######################################################################################################
+** # Standard-Vorgaben ##################################################################################
+** ######################################################################################################
+**
+
+/* ### Überschriften, Fließtexte ###################################################################### */
+
+body { color: #444; font-size: 83.33%; font-family: Verdana, Helvetica, Arial, sans-serif; }
+
+h1,h2,h3,h4 { font-family: Verdana, Arial, Sans-Serif; font-weight:normal;}
+
+h1 {font-size: 1.00em; color: #fff; margin: 0 0 0 0;  font-weight:bold; }
+h2 {font-size: 1.05em; color: #000; margin: 0 0 0.30em 0; font-weight:bold; border-bottom: 1px #ddd solid;}
+h3 {font-size: 1.0em; color: #000; margin: 0 0 0.30em 0; padding-top: 1em; font-weight:bold; border-bottom: 1px #ddd solid;}
+h4 {color: #000; padding-top: 0.3em; font-weight:bold; border-bottom: 1px #C5C5C5 solid;}
+
+#teaser h1 { font-size: 1.2em; border: 0; }
+#teaser a {
+	color:#333333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+p,ul,dd,dt { line-height: 1.5em;}
+p { line-height: 1.5em; margin: 0 0 1em 0; }
+
+
+strong,b { font-weight: bold; }
+em,i { font-style:italic; }
+pre, code {	font-family: "Courier New", Courier, monospace; }
+address { font-style:normal; line-height: 1.5em; margin: 0 0 1em 0; }
+
+#col3_content h4{font-size: 1.05em; color: #000; margin: 0 0 0.30em 0; padding-top:1em; font-weight:bold; border-bottom: 1px #ddd solid;}
+
+
+/* ######################################################################################################
+** # YAML für xt:commerce (c) by Björn Teßmann (http://yaml.t3net.de / http://www.zerosoftware.de  ######
+** ######################################################################################################
+**
+**  YAML für xt:commerce Version: 1.0.2
+**  Dateiversion: 18.05.07
+**  Datei       : content.css
+**  Funktion    : Formatierung der Inhalte (Texte, Grafiken, Links, Listen, Tabellen usw.)
+**
+*/
+/* ###################################################################################################### */
+/* ### Allgemeine Angaben ############################################################################### */
+/* ###################################################################################################### */
+
+/* ### beende Umfluß in Abschnitt ### */
+.clearHere { clear: both; }
+
+/* ### CSS für floatende Inhaltselemente ### */
+/* ### DIV-Tags ### */
+.leftCol {
+	margin-top:4px;
+	float:left;
+}
+
+.rightCol {
+	position:absolute;
+	margin-top:4px;
+	right:0;
+	padding-right:4px;
+}
+
+/* ### Ausblenden von underline und Rahmen bei Bildern als Link  ### */
+a.imgLink {
+	border: 0px none; text-decoration: none;
+}
+
+.dontShow {
+ 	position: absolute;
+    left: -3000px;
+    top: -3000px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    display: inline;
+}
+
+.optionsBg { background-color: #F1F1F1;  margin: 0; padding: 5px; }
+
+#col3_content .longInput, #col3_content .longTextarea textarea {
+	width: 99%;
+}
+
+#col3_content label.longLabel {
+	width: 99%;
+	float: none;
+}
+
+/*  ### Bearbeiten-Link im CheckoutConfirmation  ### */
+a.checkoutLink {
+	color:#009933;
+	font-style:italic;
+}
+
+/* ### Auszeichnung lokaler und externer Links ######################################################## */
+a, a em.file {color: #222; text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+#topnav a { color: #fff; background:transparent; text-decoration:none; }
+#topnav a:hover{ text-decoration:underline; background-color: transparent;}
+
+#footer a { color: #fff; }
+#footer a:hover { text-decoration:underline; }
+/* ### Stehen lassen ### */
+#main a.imagelink {
+	padding-left: 0;
+	background: transparent;
+}
+
+/* ### Formatierung "benötigte Felder"-Anzeige ### */
+.inputRequirement { font-size: 11px; color: #ff0000; }
+/* ### Copyright-Vermerk von xt:C #### */
+.copyright {
+  font-size: 11px;
+  line-height: 1.5;
+  text-align:center;
+}
+
+A.copyright {
+  color: #000000;
+}
+
+A.copyright:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+.parseTime {
+  font-size: 11px;
+  line-height: 1.5;
+  text-align:center;
+}
+
+/* ### Stehen lassen ###*/
+TD.main, P.main {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ### Formatierung für Anzeige ausverkaufte Artikel ### */
+SPAN.markProductOutOfStock {
+  font-size: 12px;
+  color: #c76170;
+  font-weight: bold;
+}
+/* ### Formatierung Sonderpreis ### */
+SPAN.productSpecialPrice {
+  color: #ff0000;
+}
+/* ### Formatierung alter Preis ### */
+SPAN.productOldPrice {
+	color: #ff0000;
+	text-decoration: line-through;
+}
+
+SPAN.errorText {
+  color: #ff0000;
+}
+
+SPAN.productDiscountPrice {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/*input, textarea, select {
+   width:auto !important;
+} */
+
+/* ######################################################################################################
+** # Spezielle Inhaltselemente ##########################################################################
+** ######################################################################################################
+
+/* ### Boxen allgemein ###################################################################### */
+
+/* ### Kopf der Infoboxen ################################################################### */
+#col1_content h1 , #col2_content h1{
+	background: #363636 url(../../img/shiny_buttons/tab_bg.gif) repeat-x top;
+	color: #fff;
+	padding:5px;
+	width:auto;
+	height:1%;
+}
+
+/* ### Körper der Infoboxen */
+.boxInfoLS , .boxInfoRS {
+	height:auto;
+	font-size: 0.8em;
+	height:1%;
+	/* margin-bottom:10px;*/ /* Abstand der Boxen */
+	/* border-bottom: 1px #000 solid;*/ /* Rahmen Boxkörper unten */
+}
+
+/* ### Innenabstand linke Boxen*/
+.boxInfoLS {
+	padding:10px;
+}
+
+/* ### Innenabstand rechte Boxen*/
+.boxInfoRS {
+	padding:10px;
+}
+
+/* ### Abschnitte in den Boxen ### */
+#col1_content p , #col2_content p {
+	margin:0;
+	line-height:1.2em;
+}
+
+/* ### Abstand für Inputs (Eingabefelder / Buttons in den Boxen ### */
+#col1_content input , #col2_content input {
+	margin:2px;
+	font-size: 1.2em;
+}
+
+/* ### Einzug für Text in den Boxen ### */
+p.boxTxtInd {
+	padding-left:12px;
+	font-size:0.9em;
+}
+
+/* ### Highlight in den Boxen ### */
+.boxTxtInd span{
+	color:#990000;
+}
+
+p.boxTxtRight {
+	text-align:right;
+	font-size:0.9em;
+}
+
+p.boxTxtLeft {
+	font-size:0.9em;
+}
+
+#col1_content h4 , #col2_content h4 {
+	margin-bottom:0px;
+	margin-top:0px;
+	font-size:0.9em;
+}
+
+/* ### Listenformatierung für Boxen ### */
+#col1_content ul.conandinfo  ,#col2_content ul.conandinfo {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+/* ### Anpassen der Linkdarstellung für die Köpfe der Boxen ### */
+#col1_content h1 a, #col2_content h1 a {
+	color:#fff;
+	text-decoration:underline;
+}
+
+/* ################################################################################################### */
+/* ### Bildpositionierung in Boxen ################################################################### */
+/* ################################################################################################### */
+/* ### Bild links ### */
+img.imgRight {
+	float: right;
+ 	margin: 2px 0px 2px 10px;
+ 	position: relative;
+}
+
+/* ### Bild rechts ### */
+img.imgLeft {
+	float: left;
+	margin: 2px 10px 2px 0px;
+	position: relative;
+}
+
+/* ### Bild zentriert in Boxen ### */
+#col1_content img.imgCenter , #col2_content img.imgCenter  { background: #fff; padding: 4px; border:1px #9A9999 solid; }
+p.centerContent { text-align:center; }
+p.rightContent { text-align:right; }
+
+/* ############################################################################################ */
+/* ### Boxen speziell ######################################################################### */
+/* ############################################################################################ */
+
+/* ### Box cart ############################################################################### */
+
+.cartBox h4 {
+	border-bottom: 0px;
+}
+
+/* ### Box Bestseller ######################################################################### */
+
+p.bestseller {
+	font-size:0.9em;
+	padding-left:7px;
+}
+
+/* ### Box Information und Content############################################################# */
+
+.boxInfoContentLS {
+	height:1%;
+	font-size: 0.8em;
+	/* margin-bottom:10px;*/ /* Abstand der Boxen , vgl. allgemeine Definition */
+	/* border-bottom: 1px #000 solid;*/ /* Rahmen Boxkörper unten, vgl. allgemeine Definition */
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+/* ############################################################################################ */
+/* ### Box für die Kategorie (Kategorienavigation) ############################################ */
+/* ############################################################################################ */
+
+.catListBody {
+	height:1%;
+	width: 100%;
+	overflow: hidden;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	padding:0;
+	border:0;
+	margin:0;
+}
+
+.catListBody li ul {
+	list-style-type: none; margin:0; padding: 0;
+}
+
+.catListBody ul {
+	list-style-type:none;
+	padding:0;
+	border:0;
+	margin:0;
+}
+
+.catListBody a {
+	display:block;
+	text-decoration: none;
+}
+
+.catListBody li {
+	float:left;
+	width: 100%;
+	margin:0;
+}
+
+#col1_content .catListBody img {
+	margin-right:0.7em;
+}
+
+/* ################################################################################################################### */
+/* ### Definition des Randes für die einzelnen Kategorieebenen + Text- und Hintergrundfarbe (Werte werden vererbt) ### */
+/* ### width + padding-left = 100% ################################################################################### */
+/* ################################################################################################################### */
+
+/* ### 1.Ebene ### */
+.catListBody ul li a {
+	width: 90%;
+	padding: 3px 0px 3px 10%;
+	color: #444;
+	border-bottom: 1px #eee solid;
+	background-color:#E1E1E1;
+}
+
+/* ### 2.Ebene ### */
+.catListBody ul li ul li a, .catListBody li.activeCat ul li a {
+	width: 80%;
+	padding: 3px 0px 3px 20%;
+	color: #444;
+	border-bottom: 1px #eee solid;
+	background-color:#CDCDCD;
+}
+
+/* ### 3.Ebene ### */
+.catListBody ul li ul li ul li a , .catListBody li.activeCat li.activeCat ul li a{
+	width: 70%;
+	padding: 3px 0px 3px 30%;
+	color: #444;
+	border-bottom: 1px #eee solid;
+	background-color:#BFBFBF;
+}
+
+/* ### 4.Ebene ### */
+.catListBody ul li ul li ul li ul li a , .catListBody li.activeCat li.activeCat li.activeCat ul li a {
+	width: 60%;
+	padding: 3px 0px 3px 40%;
+	color: #444;
+	border-bottom: 1px #eee solid;
+	background-color:#B2B2B2;
+}
+
+.catListBody li.activeCat li.activeCat li.activeCat li.activeCat ul li a  {
+	background-color:#C6C5C5;
+	color: #444;
+}
+
+/* ############################################################################################ */
+/* ### MouseOver ############################################################################## */
+/* ############################################################################################ */
+
+/* ### 1.Ebene ### */
+.catListBody li a:hover{
+	background-color:#CA513E; color: #fff;
+	text-decoration: none;
+}
+
+/* ### 2.Ebene ### */
+.catListBody li li a:hover , .catListBody li.activeCat li a:hover{
+	background-color:#CA513E; color: #fff;
+	text-decoration: none;
+}
+
+/* ### 3.Ebene ### */
+.catListBody li li li a:hover , .catListBody li.activeCat li.activeCat li a:hover{
+	background-color:#CA513E; color: #fff;
+	text-decoration: none;
+}
+
+/* ### 4.Ebene ### */
+.catListBody li li li li a:hover , .catListBody li.activeCat li.activeCat li.activeCat li a:hover{
+	background-color:#CA513E; color: #fff;
+	text-decoration: none;
+}
+
+
+
+/* ############################################################################################ */
+/* ### Aktive Kategorie ####################################################################### */
+/* ############################################################################################ */
+
+.catListBody li.activeCat a,
+.catListBody li.activeCat li.activeCat a ,
+.catListBody li.activeCat li.activeCat li.activeCat a ,
+.catListBody li.activeCat li.activeCat li.activeCat li.activeCat a {
+	background-color:#000;
+	color: #fff;
+}
+
+/* #################################################################################################### */
+/* ### Layoutelement Container ######################################################################## */
+/* #################################################################################################### */
+
+.container , .moduleRow { height:1%; background-color: #E6E6E6;  margin-bottom: 3px; padding: 5px; }
+.container2 { height:1%; background-color: #FFFFFF;  margin: 0; padding: 5px; }
+.containerNewProd {
+	width:98%;
+	float:left;
+	height:1%;
+	margin:0.1em 0.1em 0.1em 0.1em;
+	padding:0.2em;
+	background: #f1f1f1;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 1px;
+	font-size:0.9em;
+}
+.containerNewProdOverview {
+	background: #f1f1f1;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 1px;
+	padding:5px;
+	margin-bottom:10px;
+	height:1%;
+}
+
+.moduleRowOver {
+	background-color: #CCCCCC;
+	border: 1px solid;
+	border-color: #000000;
+	height:1%;
+	margin-bottom: 3px;
+	padding: 5px;
+
+	}
+.moduleRowSelected {
+	background-color: #CCCCCC;
+	margin: 0;
+	padding: 5px;
+	height:1%;
+}
+
+/* ######################################################################################################
+** ### Formulare & Tabellen #############################################################################
+** ######################################################################################################
+*/
+
+table { width: 100%; margin-bottom:0.5em; }
+form { overflow:hidden; }
+
+/* ### Labels (Beschriftungen für Formularfelder) in der Inhaltsspalte (col3) ### */
+#col3_content label {
+    font-size: 1em;
+    line-height: 130%;
+    background: transparent;
+    color: #333;
+    width: 16em;
+    padding-right: 4px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+/* ### Texteingabefelder ### */
+input[type=text], #col3_content textarea, input[type=password] , select {
+    background-color: #FBEFEE;
+    color: #333;
+    border: 1px #C5C5C5 solid; /* ### Farbe für den Rand ### */
+    float: left;
+    margin-bottom: 5px;
+}
+
+/* ### Standardgröße für Texteingabefelder Inhaltsspalte (col3)### */
+#col3_content input[type=text], #col3_content textarea,#col3_content input[type=password] {
+	width: 15em;
+}
+
+/* ### Hovereffekt für Inputfelder (ab FF 1 und IE 7) ### */
+input[type=text]:hover, input[type=text]:active, input[type=text]:focus,
+input[type=password]:hover, input[type=password]:active, input[type=password]:focus,
+select:hover,  select:active,  select:focus,
+textarea:hover,  textarea:active,  textarea:focus {
+    background-color: #F8E6E4;
+    color: #000;
+    border: 1px solid #9A9999; /* Farbe für den Rand bei Hover */
+}
+
+/* ### Rahmen um Eingabefelder ### */
+#col3_content fieldset { border: 1px solid #C5C5C5; padding: 4px; margin-bottom: 1em; margin-top: 5px;}
+/* ### Beschriftung der fieldsets ### */
+#col3_content legend {
+	font-size: 85%;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #C5C5C5;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+/* ### Bugfix bei versteckten Feldern, sonst wird der Rahmen angezeigt ### */
+input[type=hidden] { display: none; }
+
+/* ### Rahmen bei Radio-Buttons und Checkboxen ausblenden ### */
+input[type=radio] , input[type=checkbox] {
+	background: #fff;
+    color: #333;
+    border: 0 none;
+    width: 1em;
+    height: 1em;
+    margin: 0 15px 0 0;
+    padding: 0;
+    float: left;
+}
+
+/* ### Inhalt: Tabelle ### */
+table { }
+caption { border-bottom: 4px solid #fff; padding: 10px; background: #F79430; text-align: left; color: #fff; }
+tbody { background: #fff; }
+tbody td, th { border-bottom: 4px solid #fff; border-left: 1px dotted #fff; vertical-align: top; padding:5px; }
+thead th { padding: 5px; text-align: left; background: #CCCCCC; color: #333; font-weight: bold; }
+tbody th { padding: 5px; text-align: left; color: #000; line-height: 1.5em; font-weight: normal; }
+tbody tr.odd, tbody tr.odd th { background: #FEE9BD; }
+tbody tr.odd2, tbody tr.odd2 th { background: #D0FFD0; }
+tbody tr, tbody tr th { background: #e6e6e6; }
+tfoot th, tfoot td { margin: 0; border-top: 2px solid #fff; padding: 5px 10px; text-align: left; background: #CCCCCC; color: #333; }
+tfoot th { border: none; }
+tfoot td { padding-left: 10px; }
+
+tbody td.main { border-bottom: 0px solid #fff; border-left: 1px dotted #fff; vertical-align: top; padding:2px; }
+
+.checkoutConfirmation table{
+	border:#C5C5C5 1px solid;
+	margin-left:1px;
+	width:98%;
+}
+
+tbody td.attribute , tbody td.value{
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:0.9em;
+	line-height:1.5em;
+}
+
+/* ### Warenkorb total ### */
+tfoot td.subTotal { margin: 0; border-top: 2px solid #fff; padding: 5px 10px; text-align: right; background: #CCCCCC; color: #333; }
+
+/* */
+tbody td.singlePrice, tbody td.totalPrice { font-size:0.8em; border-bottom: 4px solid #fff; border-left: 1px dotted #fff; vertical-align: top; padding: 5px 10px; }
+tbody td.delete { background-color:#FFDDDD;  padding:0; vertical-align:middle; line-height:20px; }
+tbody td.delete input { margin-left:35px; }
+
+/* ### Inhalt: Tabelle für Adressauswahl checkout_shipping_address.html und checkout_payment_address.html ### */
+.adressBlockContainer td {
+	border-left: 1px dotted #fff; padding: 3px;
+}
+
+.adressBlockContainer  tbody td,.adressBlockContainer th {
+	border: 0px ; vertical-align: top; padding: 0px;
+}
+
+/* ################################################################################################################### */
+/* ### Spezielle Anweisungen für einzelne Module ##################################################################### */
+/* ################################################################################################################### */
+
+/* ### orderDetails ################################################################################################## */
+#col3_content .orderDetailsTab .quantity input {
+	width: 25px ;
+}
+
+thead.orderDetailsTab td  {
+	background-color:#CCCCCC;
+}
+
+#col3_content td.prodRow1 {
+	background-color:#CCCCCC;
+}
+
+hr.dis {
+    color: #D0D0D0; /* IE */
+    border: 1px solid #D0D0D0; /* Opera */
+    background-color: #D0D0D0; /* Mozilla */
+    margin-bottom: 1em;
+}
+
+hr {
+    color: #D0D0D0; /* IE */
+    border: 1px solid #D0D0D0; /* Opera */
+    background-color: #D0D0D0; /* Mozilla */
+    height:2px; /* Mozilla, Opera */
+}
+
+hr.cart {
+	color: #333333;
+	background-color:#333333;
+	height:1px;
+  	margin-right:0;
+	text-align:right;
+	width:80%;
+	margin: 0;
+	padding: 0;
+	border:0;
+}
+
+.hrDiv {
+	padding-bottom: 1px;
+	padding-top: 1px;
+	height: 0pt;
+	margin-top: 0pt;
+	margin-right: 0pt;
+	margin-bottom: 0pt;
+	margin-left: 0pt;
+	line-height: 0px;
+	background-color: #999999;
+}
+
+.hrDiv {
+	margin-top:3px;
+	margin-bottom:3px;
+}
+
+
+.error { color: #FF0000; }
+.must { color: #FF0000; }
+
+acronym, abbr {
+	letter-spacing: .07em;
+	border-bottom: 1px dashed #c00;
+	cursor: help;
+}
+
+img.float_left { float: left; margin-right: 1em; margin-bottom: 0.15em; border:0; }
+img.float_right { float: right; margin-left: 1em; margin-bottom: 0.15em; border:0; }
+img.center { text-align:center; background: #fff; padding: 4px; border:1px #ddd solid; }
+
+/* ### productNavigator ############################################################################################## */
+
+.productNavigator {
+	background-color:#EDEDED;
+	padding:8px;
+	border:#999999 1px solid;
+	font-size:0.75em;
+	margin-bottom:3px;
+	height:1%;
+}
+/* ################################################################################################################### */
+/* ### catListing1 ################################################################################################### */
+/* ################################################################################################################### */
+.catListing1 .subcolumns {
+	text-align:center;
+	margin-top:10px;
+}
+
+.catListing1 .subcl , .catListing1 .subc ,.catListing1 .subcr {
+	padding:0;
+}
+
+/* Kopf für Kategorien, verwendet bei allen product_listing und categorie_listing */
+#frameListHead {
+	border-bottom:1px solid #ccc;
+	margin-bottom:5px;
+	padding-bottom:5px;
+}
+
+
+/* ################################################################################################################## */
+/* ### productListing1 ############################################################################################## */
+/* ################################################################################################################## */
+
+.containerProdListing1 {
+	background-color: #E6E6E6;
+	margin-bottom: 0px;
+	padding: 5px;
+	height:1%;
+	margin-bottom:10px;
+}
+
+/* ################################################################################################################### */
+/* ### productInfo allgemein ################################################################################################ */
+/* ################################################################################################################### */
+
+.productInfo1 , .productInfo2 {
+	color: #444;
+	height:1%;
+}
+
+/* ### Bilder ###*/
+.productInfo1 img.imgLeft ,.productInfo2 img.imgLeft {
+	background: #fff;
+	padding: 15px;
+	border:1px #9A9999 solid;
+}
+
+/* ### Produkname ###*/
+#col3_content h2 , #col3_content h1 {
+	background:transparent;
+	padding:0;
+	border:0;
+	height:1%;
+	color:#000;
+}
+
+.productInfo1 p.basicData  , .productInfo2 p.basicData {
+	line-height:1.5em;
+	text-align:right;
+}
+
+#col3_content .productInfo1 input[type=text] , #col3_content .productInfo2 input[type=text]{
+	width: 2em;
+	float:none;
+}
+
+.productInfo1 .addCart , .productInfo2 .addCart {
+	text-align:right;
+	height:1%;
+}
+
+.prodInfo1Spacer {
+	margin-bottom: 15px;
+}
+.prodInfo1Spacer h2 {
+	font-size:0.9em;
+
+}
+.desc {
+	margin:10px 0 10px 0;
+}
+
+/* ################################################################################################################### */
+/* ### productInfo1 ################################################################################################## */
+/* ################################################################################################################### */
+
+
+
+
+/* ### Skalierung der zusätzlichen Bilder durch Setzen der Höhe ### */
+.productInfo1 .morePics img.imgLeft {
+	height:55px;
+}
+
+
+/* ################################################################################################################### */
+/* ### productInfo2 ################################################################################################## */
+/* ################################################################################################################### */
+.productInfo2 .subcr {
+	padding:0;
+}
+
+/* ################################################################################################################### */
+/* ### productInfo3 ################################################################################################## */
+/* ################################################################################################################### */
+.productInfo3 {
+	color: #444;
+	padding:10px;
+	border-left:1px solid #7B7F7E;
+	border-right:1px solid #7B7F7E;
+	border-bottom: 1px solid #7B7F7E;
+	margin-bottom:15px;
+	height:1%;
+}
+
+.productInfo3 img.imgLeft, .productInfo3 img.imgRight{
+	background: #fff;
+	padding: 15px;
+	border:1px #9A9999 solid;
+}
+#col3_content .productInfo3 input[type=text]{
+	width: 2em;
+	float:none;
+}
+
+.productInfo3 .addCart {
+	text-align:right;
+}
+
+.productInfo3 .morePics img.imgLeft{
+	height:55px;
+}
+
+#col3_content .productInfo3Head {
+	background:#363636 url(../../img/shiny_buttons/tab_bg.gif) repeat-x right center;
+	padding:2px 4px 2px;
+	color: #fff;
+}
+
+/* ### processCheckout: Bestellverlauf ########################################################################### */
+
+.processCheckoutGreen {
+	background-color:#D5FFBF;
+	text-align:center;
+	height:35px;
+	width:24%;
+	float:left;
+	border:1px #000 solid;
+	padding:1px;
+	margin-right:1px;
+	font-size:10px;
+	color:#000;
+	line-height:15px;
+}
+
+.processCheckoutRed {
+	background-color:#FFDDDD;
+	text-align:center;
+	height:35px;
+	width:24%;
+	float:left;
+	border:1px #000 solid;
+	padding:1px;
+	margin-right:1px;
+	font-size:10px;
+	color:#000;
+	line-height:15px;
+}
+
+.processCheckoutYellow {
+	background-color:#FFFF91;
+	text-align:center;
+	height:35px;
+	width:24%;
+	float:left;
+	border:1px #000 solid;
+	padding:1px;
+	margin-right:1px;
+	font-size:10px;
+	color:#000;
+	line-height:15px;
+}
+
+/* ### prodOptionsDropdown ################################################################################################## */
+
+.prodOptionsDrop {
+	font-size:0.9em;
+	padding:3px;
+	background-color: #E6E6E6;
+}
+
+.prodOptionsDropName {
+	float:left;
+	width:48%;;
+
+}
+.prodOptionsDropSel{
+	margin-left:48%;
+}
+
+/* ### advanced_search #################################################################################################### */
+
+#advanced_search input[type="text"] {
+	width:40% !important;
+	margin-right:4px;
+}
+
+#advanced_search label {
+	width: 18em;
+}
+
+/* ### Auswahl für Anrede  ################################################################################################ */
+
+#checkout_address input[type="radio"] , #addressbook input[type="radio"] ,#create_account input[type="radio"]  {
+	float:none;
+	margin-left:5px;
+	margin-right:10px;
+}
+
+
+/* ### stehen lassen ### */
+}

@@ -1,0 +1,41 @@
+{config_load file="$language/lang_$language.conf" section="boxes"}
+{if $deny_cart neq 'true'}
+{if $empty=='false'}
+<h1><a href="{$LINK_CART}">{#heading_cart#}</a></h1>
+<div class="boxInfoRS">
+	<div class="cartBox">
+		{foreach name=aussen item=products_data from=$products}
+		<h4>{$products_data.QTY}x&nbsp;<a href="{$products_data.LINK}">{$products_data.NAME|truncate:25:"...":true}</a></h4>
+		{/foreach}
+		{if $DISCOUNT}
+		{#text_discount#}&nbsp;{$DISCOUNT}
+		{/if}
+		<div class="hrDiv">&nbsp;</div>
+		<p class="boxTxtRight">{$UST}</p>
+		<p class="boxTxtRight"><strong>{#text_total#}{$TOTAL}</strong></p>
+		{if $SHIPPING_INFO}
+		<p class="boxTxtRight">{$SHIPPING_INFO}</p>
+		{/if}
+		<div class="hrDiv">&nbsp;</div>
+
+	</div>
+</div>
+
+{else}
+<!-- cart has no content -->
+<h1><a href="{$LINK_CART}">{#heading_cart#}</a></h1>
+<div class="boxInfoRS">
+	<p>{#text_empty_cart#}</p>
+</div>
+{/if}
+
+{if $coupon_valid == 'true'}
+<div class="boxInfoRS">
+	<p>{#text_empty_cart#}</p>
+		<p><img src="{$tpl_path}img/img_gift.gif" alt="" />
+		{#cart_coupon#}
+		{$coupon_amount}</p>
+
+</div>
+{/if}
+{/if}

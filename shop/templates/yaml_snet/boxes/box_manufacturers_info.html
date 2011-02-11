@@ -1,0 +1,14 @@
+{config_load file="$language/lang_$language.conf" section="boxes"}
+<h1>{#heading_manufacturers_info#}</h1>
+<div class="boxInfoRS">
+
+		{if $IMAGE}
+		<p class="centerContent"><img src="{$IMAGE}" alt="{$NAME}" class="imgCenter" /></p>
+		{/if}
+		<h4>{$NAME}</h4>
+		{if $URL}
+		<p>{$URL}</p>
+		{/if}
+		<p>{$LINK_MORE}</p>
+
+</div>

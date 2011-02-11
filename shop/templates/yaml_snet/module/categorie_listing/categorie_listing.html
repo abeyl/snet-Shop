@@ -1,0 +1,68 @@
+{config_load file="$language/lang_$language.conf" section="categorie_listing"}
+
+{if $CATEGORIES_NAME}<h2>{$CATEGORIES_NAME}</h2>{/if}
+{if $CATEGORIES_HEADING_TITLE || $CATEGORIES_DESCRIPTION || $CATEGORIES_IMAGE}
+	<div id="frameListHead" class="floatbox" >
+		{if $CATEGORIES_IMAGE}<img src="{$CATEGORIES_IMAGE}" alt="{$CATEGORIES_NAME}" class="imgLeft" />{/if}
+		{$CATEGORIES_HEADING_TITLE}<br />
+		{if $CATEGORIES_DESCRIPTION}{$CATEGORIES_DESCRIPTION}{/if}<br class="clearHere" />
+	</div>
+{/if}
+<br class="clearHere" />
+
+{if $module_content !=''}
+<h3>{#heading_more_categories#}</h3>
+<div class="catListing1">
+
+{assign var="elementNow" value="0"} {* Zurücksetzen der Varible *}
+{foreach name=aussen item=module_data from=$module_content}
+
+{* Überprüfung welche Spalte derzeit aktuell ist *}
+	{if $elementNow == "0" }
+	<div class="subcolumns">
+		<div class="c33l">
+			<div class="subcl">
+	{elseif $elementNow == "1" }
+		<div class="c33l">
+			<div class="subc">
+	{elseif $elementNow == "2" }
+		<div class="c33r">
+			<div class="subcr">
+	{/if}
+
+{* Content *}
+				{if $module_data.CATEGORIES_IMAGE}<a href="{$module_data.CATEGORIES_LINK}"><img src="{$module_data.CATEGORIES_IMAGE}" alt="{$module_data.CATEGORIES_NAME}" /></a><br/>{/if}
+				<a href="{$module_data.CATEGORIES_LINK}">{$module_data.CATEGORIES_NAME}</a>
+{* Content END*}
+			</div>
+		</div>
+{* Subcolums schließen *}
+{if $elementNow == "2" }
+	</div>
+{/if}
+	
+
+{* Spaltennummer ändern *}
+{if $elementNow < "2" }
+	{assign var="elementNow" value="`$elementNow+1`"}
+{else}
+	{assign var="elementNow" value="0"}
+{/if}
+
+{/foreach}
+{* Leere Zellen einfügen *}
+{assign var="but1" value="`$smarty.foreach.aussen.total+2`"}
+{assign var="but2" value="`$smarty.foreach.aussen.total+1`"}
+{* Wenn Spalten unvollständig füge leere Spalten hinzu *}
+{if $but1%3 == 0 }
+	<div class="c33l"><div class="subc">&nbsp;</div></div>
+	<div class="c33r"><div class="subcr">&nbsp;</div></div>
+	</div>
+{elseif $but2%3 == 0 }
+	<div class="c33r"><div class="subcr">&nbsp;</div></div>
+	</div>
+{/if}
+
+</div>
+{/if}<br />
+{$MODULE_new_products}

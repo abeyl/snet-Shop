@@ -1,0 +1,89 @@
+{config_load file="$language/lang_$language.conf" section="product_info"}
+
+<script language="javascript">
+<!--
+initPriceArray();
+//-->
+</script>
+{foreach name=aussen item=graduated_data from=$graduated}
+  <script language="javascript">
+  <!--
+  setPriceArray({$graduated_data.ID},{$graduated_data.VALUE});
+  //-->
+  </script>
+{/foreach}
+
+{$PRODUCT_NAVIGATOR}
+{$FORM_ACTION}
+
+<div class="productInfo2">
+	{if $PRODUCTS_IMAGE !=''}
+  			<div class="subcolumns">
+  				<div class="c50l">
+    				<div class="subcl">
+      					<a href="{$PRODUCTS_POPUP_LINK}"><img src="{$PRODUCTS_IMAGE}" alt="{$PRODUCTS_NAME}" class="imgLeft"/></a>
+				    	<p class="morePics">
+							{if $PRODUCTS_IMAGE_1 != ''}<a href="{$PRODUCTS_POPUP_LINK_1}"><img src="{$PRODUCTS_IMAGE_1}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_2 != ''}<a href="{$PRODUCTS_POPUP_LINK_2}"><img src="{$PRODUCTS_IMAGE_2}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_3 != ''}<a href="{$PRODUCTS_POPUP_LINK_3}"><img src="{$PRODUCTS_IMAGE_3}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_4 != ''}<a href="{$PRODUCTS_POPUP_LINK_4}"><img src="{$PRODUCTS_IMAGE_4}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_5 != ''}<a href="{$PRODUCTS_POPUP_LINK_5}"><img src="{$PRODUCTS_IMAGE_5}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_6 != ''}<a href="{$PRODUCTS_POPUP_LINK_6}"><img src="{$PRODUCTS_IMAGE_6}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_7 != ''}<a href="{$PRODUCTS_POPUP_LINK_7}"><img src="{$PRODUCTS_IMAGE_7}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+							{if $PRODUCTS_IMAGE_LINK!=''}<a href="{$PRODUCTS_IMAGE_LINK}" onclick="window.open(this.href); return false;">{$PRODUCTS_TEXT_ZOOM}</a>{/if}
+							{if $PRODUCTS_FSK18=='true'}<img src="{$tpl_path}img/fsk18.gif" alt="" />{/if}
+						</p>
+				    </div>
+  				</div>
+  				<div class="c50r">
+    				<div class="subcr"><h1>{$PRODUCTS_NAME}</h1>
+    					<div class="basicData">{$PRODUCTS_PRICE}<br />
+				{$PRODUCTS_TAX_INFO}{if $PRODUCTS_SHIPPING_LINK}{$PRODUCTS_SHIPPING_LINK}{/if}<br />
+				{if $PRODUCTS_VPE}{$PRODUCTS_VPE}<br />{/if}
+				{if $PRODUCTS_MODEL!=''}{#model#}{$PRODUCTS_MODEL}{/if}{$PRODUCTS_DISCOUNT}<br />
+				{if $SHIPPING_NAME}{#text_shippingtime#}{if $SHIPPING_IMAGE}<img src="{$SHIPPING_IMAGE}" alt="{$SHIPPING_NAME}" />{/if} {$SHIPPING_NAME}{/if}
+				<br/>
+				<a href="javascript:window.print();"><img src="{$tpl_path}buttons/{$language}/print.gif" alt="{$module_data.PRODUCTS_NAME}" /></a><br />
+			</div>
+					{if $PRODUCTS_DESCRIPTION !=''}<div class="desc">{$PRODUCTS_DESCRIPTION}</div>{/if}
+					<br class="clearHere" />
+					{if $MODULE_product_options !=''}<div class="options">{$MODULE_product_options}</div>{/if}
+					<br class="clearHere" />
+					<p class="addCart">{$ADD_QTY}{$ADD_CART_BUTTON}&nbsp;</p>
+					<div id="NEWprice"></div>
+					{if $MODULE_graduated_price !=''}<br />{$MODULE_graduated_price}{/if}
+			<br class="clearHere" />
+     				</div>
+  				</div>
+			</div>
+		{else}
+				<h1>{$PRODUCTS_NAME}</h1>
+				<div class="basicData">{$PRODUCTS_PRICE} <a href="javascript:window.print();"><img src="{$tpl_path}buttons/{$language}/print.gif" alt="{$module_data.PRODUCTS_NAME}" /></a><br />
+				{$PRODUCTS_TAX_INFO}{if $PRODUCTS_SHIPPING_LINK}{$PRODUCTS_SHIPPING_LINK}{/if}<br /> 
+				{if $PRODUCTS_VPE}{$PRODUCTS_VPE}<br />{/if}
+				{if $PRODUCTS_MODEL!=''}{#model#}{$PRODUCTS_MODEL}{/if}{$PRODUCTS_DISCOUNT}<br />
+				{if $SHIPPING_NAME}{#text_shippingtime#}{if $SHIPPING_IMAGE}<img src="{$SHIPPING_IMAGE}" alt="{$SHIPPING_NAME}" />{/if} {$SHIPPING_NAME}{/if}
+				<br/>
+				<a href="javascript:window.print();"><img src="{$tpl_path}buttons/{$language}/print.gif" alt="{$module_data.PRODUCTS_NAME}" /></a><br />
+			</div>
+					{if $PRODUCTS_DESCRIPTION !=''}<div class="desc">{$PRODUCTS_DESCRIPTION}</div>{/if}
+					{if $MODULE_product_options !=''}<div class="options">{$MODULE_product_options}</div>{/if}
+					<br class="clearHere" />
+					<p class="addCart">{$ADD_QTY}{$ADD_CART_BUTTON}&nbsp;</p>
+					{if $MODULE_graduated_price !=''}<br />{$MODULE_graduated_price}{/if}
+			<br class="clearHere" />
+		{/if}
+
+
+</div>
+{if $PRODUCTS_URL != ''}<p>{$PRODUCTS_URL}</p>{/if}
+{if $PRODUCTS_DATE_AVIABLE != ''}<p>{$PRODUCTS_DATE_AVIABLE}</p>{/if}
+{if $PRODUCTS_ADDED != ''}<p>{$PRODUCTS_ADDED}</p>{/if}
+{if $MODULE_products_reviews != ''}<div class="prodInfo1Spacer">{$MODULE_products_reviews}</div>{/if}
+{if $MODULE_products_media != ''}<div class="prodInfo1Spacer">{$MODULE_products_media}</div>{/if}
+{if $MODULE_cross_selling != ''}<div class="prodInfo1Spacer">{$MODULE_cross_selling}</div>{/if}
+{if $MODULE_reverse_cross_selling != ''}<div class="prodInfo1Spacer">{$MODULE_reverse_cross_selling}</div>{/if}
+{if $MODULE_also_purchased != ''}<div class="prodInfo1Spacer">{$MODULE_also_purchased}</div>{/if}
+
+<script type="text/javascript">showPrice(document.forms['cart_quantity']);</script>
+{$FORM_END}

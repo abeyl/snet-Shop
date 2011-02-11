@@ -1,0 +1,75 @@
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+**
+**  YAML Version: 2.5
+**  Dateiversion: 18.06.06
+**  Datei       : basemod.css
+**  Funktion    : Basis-Modifikation für das Layout des YAML-Tutorials
+**
+*/
+
+@media all
+{
+
+/* ### Formatierung der Seite ########################################################################## */
+body { background: #b2b2b2; padding: 10px; background-image: url(../../img/body_bg.gif);background-repeat: repeat-x;	}
+
+/* ### Hier kann ein umlaufender Rand um die gesamte Webseite erzeugt werden ########################### */
+
+#page{ border: 1px #667 solid;  }
+#page_margins {border:0; min-width: 756px; max-width: 80em; margin:auto;}
+
+/* ### Formatierung der Kopfbereiches ################################################################## */
+
+/*#header { position:relative; height: 140px; color: #fff; background: #363636 url(../../img/shiny_buttons/tab_bg.gif) repeat-x top; }*/
+#header { position:relative; height: 140px; color: #fff; background: #335d85; }
+#header img {position:absolute; top: 16px; left: 10px; font-size:208%;}
+
+/* ### Formatierung des Teasers (Brotkrumenpfad) ######################################################## */
+
+#teaser {
+	margin:0;
+	background: #ffffff;
+	padding:4px 4px 4px 18px;
+	color: #5f5d75;
+}
+
+/* ### Formatierung der Fußzeile ####################################################################### */
+#footer { color:#9A9A9A; background: #363636 url(../../img/shiny_buttons/tab_bg.gif) repeat-x top; padding: 1em 0 0 0; border-top: 1px #ddd solid; line-height: 1.5em; font-size:0.8em;}
+
+/* ######################################################################################################
+** ### Formatierung der Inhaltsspalten ##################################################################
+** ######################################################################################################
+*/
+#main { background: #fff ; padding-top: 1em;}
+
+/* ### linke Spalte ### */
+#col1 {	width: 22.5%; }
+#col1_content { margin-left:0; margin-right:0; color: #444; background:inherit; }
+
+/* ### Rechte Spalte ### */
+#col2 {	width: 25%; }
+#col2_content {	padding-left:4px; margin-left:0; margin-right:0; }
+
+/* ### Mittlere Spalte ### */
+#col3
+{
+  	margin-left: 22.5%;
+   	margin-right: 25%;
+	border-left: 0px dotted #ddd;
+	border-right: 0px dotted #ddd;
+}
+
+#col3_content { margin-left: 1em; margin-right: 1em; }
+
+/* ### Anpassung für die Ausblendung der Boxen bei Checkout (entsprechende index.html muss verwendet werden) ### */
+#main_checkout {
+	background:#ffffff;
+}
+#col3_checkout {
+	width:100%;
+}
+
+/* ### stehen lassen ### */
+}

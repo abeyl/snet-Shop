@@ -1,0 +1,392 @@
+/*
+ * SlimStat: simple web analytics
+ * Copyright (C) 2009 Pieces & Bits Limited
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+/********************************************************************* =types */
+
+body {font-family: Verdana, Arial; font-size: 65%}
+
+.div_scroll {overflow: auto; height: 190px;clear:both;border:1px solid #DADFE0;}
+.w70 {width:70%;}
+.w65 {width:65%;}
+.w64 {width:64%;}
+.w59 {width:59%;}
+.w15 {width:15%;}
+.w72 {width:72%;}
+.w12 {width:12%;}
+.w10 {width:10%;}
+.w8 {width:8%;}
+.w7 {width:7.4%;}
+.w5 {width:5%;}
+.dunkel {background:#F6F6F6;}
+.dunkel_dunkel {background:#ccc}
+.w15px {width:15px;}
+.table_look, .tbody_scroll, .detail {float:left;clear:both;padding:0;margin:0;list-style:none;width:100%;display:block;}
+.table_look li, .tbody_scroll li, .detail li {float:left;}
+.table_look { background-color: #677E98;color: #fff;font-size: 12px;font-weight: bold;height: 30px;line-height: 30px;}
+span.first {padding-left: 10px;}
+.tbody_scroll li {padding:2px 0;}
+.tbody_scroll .first {overflow:hidden;}
+
+h1 {
+	color: #333;
+	font-size: 2em;
+	font-weight: bold;
+	height: 1.25em;
+	line-height: 1.25;
+	margin: 0;
+	padding: 0.4166em 20px 0;
+	text-align: left; }
+h2 {
+	color: #333;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 1.1111;
+	margin-bottom: 0; }
+
+h3 {
+	background-color: #677E98;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	height: 1em;
+	line-height: 1.4286;
+	margin: 0;
+	padding: 10px;
+	}
+
+a:focus {outline: none}
+
+label {
+	display: block; }
+ol {
+	margin: 1.6667em 0;
+	padding: 0 0 0 30px; }
+p {
+	margin: 1.6667em 0; }
+	p.first {
+		margin-top: 0; }
+pre {
+	background-color: #eee;
+	border: 1px solid #d2d2c8;
+	font-size: 11px;
+	line-height: 1.8181em;
+	margin: 1.8181em 0;
+	padding: 0.8181em 12px; }
+tt, code {
+	font-size: 11px;
+	line-height: 1.8181em; }
+/*
+table {
+	border-spacing: 0;
+	font-size: 12px;
+	margin: 0;
+	padding: 0; }
+th, td {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	vertical-align: bottom;
+	white-space: nowrap;
+	width: 50px; }
+thead th {
+	color: #333;
+	font-size: 1.1666em;
+	font-weight: bold;
+	height: 1.4286em;
+	line-height: 1.4286;
+	padding-top: 1.0714em;
+	padding-bottom: 0.3571em;
+	text-shadow: #fff 0 1px 0; }
+tbody tr td {
+	border-bottom: solid #eee 1px; }
+*/
+tbody tr.detail td {
+	background-color: #d2d2c8;
+	border-bottom: none;
+	font-size: 0.8333em; }
+
+tbody tr.detail td {
+	height: 1.7em;
+	line-height: 1.7; }
+#content tbody tr:hover td {
+	background-color: #ffc; }
+
+/******************************************************************* =classes */
+
+.filter_item {background: url(../../../images/cross.gif) center left no-repeat; padding-left: 22px;}
+
+.up {
+	color: #090; }
+.dn {
+	color: #b00; }
+.left {
+	text-align: left; }
+.right {
+	text-align: right; }
+.center {
+	text-align: center; }
+.first {
+	margin-left: 0 !important; }
+.prev {
+	color: #999;
+	font-size: 0.8333em;
+	height: 1.7em;
+	line-height: 1.7; }
+.detail {
+	display: none; }
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8,
+.grid9, .grid10, .grid11, .grid12, .grid13, .grid14, .grid15, .grid16 {
+	float: left;
+	padding: 0 5px 0 0; 
+	margin:3.3334em 0 0;}
+	#sideinner .grid3 {
+		float: none;
+		}
+.grid16, .grid4, .grid12, .grid6 {margin: 0 0 15px 0;}
+
+.grid16, .grid16 table {
+	width: 100%; }
+.grid12, .grid12 table {
+	width: 100%; }
+.grid10, .grid10 table {
+	width: 580px; }
+.grid8, .grid8 table {
+	width: 460px; }
+.grid7, .grid7 table {
+	width: 400px; }
+.grid6, .grid6 table {
+	width: 49.2%; }
+.grid5, .grid5 table {
+	width: 280px; }
+.grid4, .grid4 table {
+	width: 220px; }
+.grid3, .grid3 table {
+	width: 160px; }
+.grid2, .grid2 table {
+	width: 100px; }
+
+
+.table {
+	max-height: 20em;
+	overflow: hidden; }
+.tbody {
+	border:1px solid #F1F1F1;
+	max-height: 18.5em;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: 100%; }
+
+.text {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; }
+	.grid12 .text {
+		width: 520px; }
+	.grid10 .text {
+		width: 400px; }
+	.grid8 .text {
+		width: 280px; }
+	.grid7 .text {
+		width: 220px; }
+	.grid6 .text {
+		width: 160px; }
+		.grid6 .detail .text {
+			padding-left: 22px;
+			width: 138px; }
+	.grid5 .text {
+		width: 100px; }
+		.grid5 .detail .text {
+			padding-left: 22px;
+			width: 78px; }
+.toggle, .external {
+	display: inline-block !important;
+	float: left;
+	margin-right: 3px;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -1000px;
+	vertical-align: bottom;
+	width: 15px; }
+.toggle {
+background-image: url('../_img/toggle.png'); }
+.external {
+background-image: url('../_img/external.png'); }
+th.first {
+	padding-left: 12px; }
+td.first {
+	padding-left: 12px; }
+th.last, td.last {
+	padding-right: 18px; }
+
+/*********************************************************************** =ids */
+
+#container {
+
+	}
+#head {
+
+	}
+#menu {
+	height: 1.6667em;
+	list-style: none;
+	padding: 0 10px 0;
+	top: 3.3333em;
+	border-bottom: 1px solid #ccc;
+	 }
+	#menu li {
+		float: right;
+		height: 1.6667em;
+		line-height: 1.6667;
+		overflow: hidden;
+		padding-right: 5px; }
+	#menu li a {
+		background: #fff url('../_img/menu_li.png');
+		display: block;
+		padding: 0 10px;
+		text-align: center;
+		width: 50px; }
+	#menu li a:hover, #menu li.selected a {
+		background-position: 0 -40px;
+		color: #fff; }
+#title {
+	background-color: #fff;
+	height: 1.1111em;
+	padding: 0.5555em 0 1.1111em;
+	}
+	#title span, #side h2 span {
+		font-size: 0.6667em;
+		line-height: 1.6667em;
+		white-space: nowrap; }
+#main {
+	min-height: 33.3333em;
+	z-index: 1; }
+#content {
+	
+	padding: 0 0 3.3333em;
+ }
+#summary td, .summary td {
+	height: 3.1667em;
+	line-height: 3.1667;
+ }
+	#summary .tbody, .summary .tbody {
+		height: 6.5em;
+		overflow: hidden; }
+	#summary .numeric, .summary .numeric {
+		font-size: 1.1667em;
+		font-weight: bold;
+		height: 2.7143em;
+		line-height: 2.7143; }
+	#summary .prev, .summary .prev {
+		font-size: 0.9166em;
+		height: 3.4545em;
+		line-height: 3.4545; }
+	#summary .last, .summary .last {
+		padding-right: 0; }
+	#summary .text, .summary .text {
+		width: 77px; }
+#hits img {
+	float: left; }
+#side {
+	padding-right: 0;
+ }
+#sideinner {
+	margin-top: 0;
+	overflow: hidden;
+	padding-left: 35px;
+	padding-right: 30px; }
+	 .calendar {
+		background-color: #d2d2c8;
+		color: #999; }
+		 .calendar thead {
+			overflow: hidden;
+			 }
+		 .calendar th {
+			font-size: 1em;
+			width: 23px; }
+		 .calendar th a {
+			display: block;
+			background: #f1f1f1;
+			width: 23px; }
+		 .calendar th:last-child, #side .calendar td:last-child,
+		 .calendar th:last-child a, #side .calendar td:last-child a {
+			width: 22px; }
+		 .calendar th a.thismonth {
+			width: 115px; }
+		 .calendar th a:hover {
+			 }
+		 .calendar td {
+			background-color: #eee;
+			width: 23px; }
+		 .calendar td a:hover {
+			background-color: #ffc;
+			 }
+	 		.calendar a {
+			background: #ffffff;
+			display: block;
+			color:#000;
+			text-decoration: none; }
+		 .calendar th, #side .calendar td {
+			border: none;
+			height: 1.6667em;
+			line-height: 1.6667;
+			padding-top: 0;
+			padding-bottom: 0;
+			text-align: center !important; }
+		  .calendar td.selected {
+			background-color: #d2d2c8; }
+	#side .grid3 p {
+		margin: 0 0 1.6667em; }
+	#side .grid3 p.text {
+		background: transparent url('../_img/delete.gif') no-repeat;
+		border-bottom: solid 1px #d2d2c8;
+		line-height: 1.5833;
+		margin: 0;
+		padding: 0 3px;
+		text-align: left; }
+	#side .grid3 p.text a {
+		padding-left: 15px; }
+#api, #api a {
+	background: transparent url('../_img/xml.gif') no-repeat;
+	display: block;
+	height: 14px;
+	line-height: 14px;
+	min-height: 14px;
+	overflow: hidden;
+	text-indent: -1000px;
+	width: 36px; }
+#feed, #feed a {
+	background: transparent url('../_img/feed.png') no-repeat;
+	display: block;
+	height: 14px;
+	line-height: 14px;
+	min-height: 14px;
+	overflow: hidden;
+	text-indent: -1000px;
+	width: 14px; }
+#foot {
+	background: #eee url('../_img/footer.png') no-repeat;
+	clear: both;
+	}
+#footinner {
+	line-height: 1.6667;
+	margin: 0;
+	padding: 1.6667em 20px;
+	text-align: right; }

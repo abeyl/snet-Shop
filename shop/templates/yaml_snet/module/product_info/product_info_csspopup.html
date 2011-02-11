@@ -1,0 +1,60 @@
+{config_load file="$language/lang_$language.conf" section="product_info"}
+{* Diese Datei kann nur mit dem Standardkonform-Patch verwendet werden, siehe http://yaml.t3net.de/YAML-fuer-xt-Commerce.101.0.html *}
+
+<script language="javascript">
+<!--
+initPriceArray();
+//-->
+</script>
+{foreach name=aussen item=graduated_data from=$graduated}
+  <script language="javascript">
+  <!--
+  setPriceArray({$graduated_data.ID},{$graduated_data.VALUE});
+  //-->
+  </script>
+{/foreach}
+
+{$PRODUCT_NAVIGATOR}
+{$FORM_ACTION}
+<div class="productInfo1">
+{if $PRODUCTS_IMAGE !=''}<a href="{$PRODUCTS_POPUP_LINK}" class="popup image"><img src="{$PRODUCTS_IMAGE}" alt="{$PRODUCTS_NAME}" class="imgLeft"/></a>{/if}
+<h2>{$PRODUCTS_NAME}</h2>
+<p class="basicData">{$PRODUCTS_PRICE}<br />
+	{$PRODUCTS_TAX_INFO}{if $PRODUCTS_SHIPPING_LINK}{$PRODUCTS_SHIPPING_LINK}{/if}<br />
+	{if $PRODUCTS_VPE}{$PRODUCTS_VPE}<br />{/if}
+	{if $PRODUCTS_MODEL!=''}{#model#}{$PRODUCTS_MODEL}{/if}{$PRODUCTS_DISCOUNT}<br />
+	{if $SHIPPING_NAME}{#text_shippingtime#}{if $SHIPPING_IMAGE}<img src="{$SHIPPING_IMAGE}" alt="{$SHIPPING_NAME}" />{/if} {$SHIPPING_NAME}{/if}
+</p><br class="clearHere" />
+
+{if $PRODUCTS_DESCRIPTION !=''}<p class="desc">{$PRODUCTS_DESCRIPTION}</p>{/if}
+{if $MODULE_product_options !=''}<div class="options">{$MODULE_product_options}</div>{/if}
+<br class="clearHere" />
+<p class="addCart">{$ADD_QTY}{$ADD_CART_BUTTON}&nbsp;{$PRODUCTS_PRINT}</p>
+<div id="NEWprice"></div>
+<p class="morePics">
+			{if $PRODUCTS_IMAGE_1 != ''}<a href="{$PRODUCTS_POPUP_LINK_1}" class="popup image"><img src="{$PRODUCTS_IMAGE_1}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_2 != ''}<a href="{$PRODUCTS_POPUP_LINK_2}" class="popup image"><img src="{$PRODUCTS_IMAGE_2}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_3 != ''}<a href="{$PRODUCTS_POPUP_LINK_3}" class="popup image"><img src="{$PRODUCTS_IMAGE_3}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_4 != ''}<a href="{$PRODUCTS_POPUP_LINK_4}" class="popup image"><img src="{$PRODUCTS_IMAGE_4}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_5 != ''}<a href="{$PRODUCTS_POPUP_LINK_5}" class="popup image"><img src="{$PRODUCTS_IMAGE_5}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_6 != ''}<a href="{$PRODUCTS_POPUP_LINK_6}" class="popup image"><img src="{$PRODUCTS_IMAGE_6}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_7 != ''}<a href="{$PRODUCTS_POPUP_LINK_7}" class="popup image"><img src="{$PRODUCTS_IMAGE_7}" alt="{$PRODUCTS_NAME}" class="imgLeft" /></a>{/if}
+			{if $PRODUCTS_IMAGE_LINK!=''}<a href="{$PRODUCTS_IMAGE_LINK}" onclick="window.open(this.href); return false;">{$PRODUCTS_TEXT_ZOOM}</a>{/if}
+			{if $PRODUCTS_FSK18=='true'}<img src="{$tpl_path}img/fsk18.gif" alt="" />{/if}
+</p><br class="clearHere" />
+
+
+
+{if $MODULE_graduated_price !=''}{$MODULE_graduated_price}{/if}
+</div>
+{if $PRODUCTS_URL != ''}<p>{$PRODUCTS_URL}</p>{/if}
+{if $PRODUCTS_DATE_AVIABLE != ''}<p>{$PRODUCTS_DATE_AVIABLE}</p>{/if}
+{if $PRODUCTS_ADDED != ''}<p>{$PRODUCTS_ADDED}</p>{/if}
+{if $MODULE_products_reviews != ''}<div class="prodInfo1Spacer">{$MODULE_products_reviews}</div>{/if}
+{if $MODULE_products_media != ''}<div class="prodInfo1Spacer">{$MODULE_products_media}</div>{/if}
+{if $MODULE_cross_selling != ''}<div class="prodInfo1Spacer">{$MODULE_cross_selling}</div>{/if}
+{if $MODULE_reverse_cross_selling != ''}<div class="prodInfo1Spacer">{$MODULE_reverse_cross_selling}</div>{/if}
+{if $MODULE_also_purchased != ''}<div class="prodInfo1Spacer">{$MODULE_also_purchased}</div>{/if}
+
+<script type="text/javascript">showPrice(document.forms['cart_quantity']);</script>
+{$FORM_END}
